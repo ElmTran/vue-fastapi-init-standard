@@ -17,6 +17,7 @@ Read this file before making architectural or implementation changes.
 - Avoid unrelated refactors.
 - Ask before taking a path with meaningful architectural tradeoffs.
 - Prefer extending an existing pattern over introducing a parallel pattern.
+- Create `AGENTS.md` early in a new project so future agents inherit the same constraints.
 
 ## Frontend Guardrails
 
@@ -58,9 +59,11 @@ When an agent is implementing from this starter:
 - Do not overfit initialization code to a single future feature.
 - Keep PRD and feature logic separate from architecture files and starter code.
 - Do not allow starter files to grow into large catch-all modules without first extracting structure.
+- Treat `AGENTS.md` as the root instruction file for future repository work.
 
 ## Good Progress Updates
 
 - `Applying frontend setup and design references before touching the UI bootstrap.`
 - `Applying backend standard before scaffolding the API package.`
+- `Creating AGENTS.md so future implementation follows the same rules.`
 - `Cross-checking the implementation against the starter rules.`

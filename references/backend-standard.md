@@ -51,6 +51,7 @@ pyproject.toml
 - Use typed response models. Do not return ORM rows directly over HTTP.
 - Keep route prefixes versioned, such as `/v1`.
 - Extend existing patterns instead of inventing alternate structures.
+- Ensure `AGENTS.md` references backend rules so later agents keep using this structure.
 
 ## Error and Trace Rules
 

@@ -13,6 +13,7 @@ Document the initialization path for a Vue 3 + TypeScript + Vite frontend withou
 3. Integrate Tailwind by following the Vite guide at `https://tailwindcss.com/docs/installation/using-vite`.
 4. Integrate Iconify for Vue by following `https://iconify.design/docs/icon-components/vue/`.
 5. Integrate shadcn-vue for an existing Vite project by following the Vite existing-project flow at `https://ui.shadcn.com/docs/installation/vite`.
+6. Generate a project-level `AGENTS.md` so future agents inherit the same frontend, backend, and design constraints.
 
 ## Expected Frontend Stack
 

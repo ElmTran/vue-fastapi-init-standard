@@ -1,6 +1,6 @@
 ---
 name: vue-fastapi-init-standard
-description: Bootstrap and standardize a new Vue 3 + Vite frontend and FastAPI backend project with documented frontend setup steps, generated backend starter structure, Lovable-inspired design rules, and strict agent development guardrails. Use when Codex or another coding agent needs to create an initial full-stack workspace, scaffold the backend, document the frontend initialization process, or keep future implementation aligned with the same architecture and coding standards.
+description: Bootstrap and standardize a new Vue 3 + Vite frontend and FastAPI backend project with documented frontend setup steps, generated backend starter structure, Lovable-inspired design rules, and strict agent development guardrails. Use when Codex or another coding agent needs to create an initial full-stack workspace, scaffold the backend, document the frontend initialization process, generate a project-level AGENTS.md file, or keep future implementation aligned with the same architecture and coding standards.
 ---
 
 # Vue FastAPI Init Standard
@@ -12,16 +12,28 @@ Use this skill to create or normalize a reusable project baseline for a Vue 3 fr
 1. Read `references/development-rules.md` first.
 2. Read `references/frontend-setup.md` when the task touches frontend initialization, routing, components, styling, or design setup.
 3. Read `references/backend-standard.md` when the task touches backend scaffolding, API modules, config, errors, tracing, or services.
-4. Copy the backend starter from `assets/backend-template/` when the user wants a ready backend skeleton.
-5. Keep changes small and architectural. Do not invent product features unless the user explicitly asks.
+4. Create a project-level `AGENTS.md` from `assets/AGENTS.template.md` when starting a new project.
+5. Copy the backend starter from `assets/backend-template/` when the user wants a ready backend skeleton.
+6. Keep changes small and architectural. Do not invent product features unless the user explicitly asks.
 
 ## What This Skill Should Produce
 
 - A documented frontend bootstrap path based on `pnpm create vite`
 - A FastAPI backend starter with `app/` package layout
+- A project-level `AGENTS.md` file that anchors future agent behavior
 - Shared engineering rules that keep coding agents from drifting away from the chosen stack
 - Design guidance for warm cream, charcoal, low-shadow UI work
 - Development habits that encourage small files, clear separation, and reusable structure
+
+## AGENTS.md Requirement
+
+When using this skill for a new project:
+
+- Create `AGENTS.md` at the project root by adapting `assets/AGENTS.template.md`.
+- Keep it implementation-facing rather than product-facing.
+- Use it to point future agents to the local frontend, backend, and design rule files.
+- Preserve the rule priority so future work stays aligned.
+- Keep product requirements, features, and PRD content outside `AGENTS.md`.
 
 ## Frontend Rules
 
@@ -61,4 +73,5 @@ When Codex, Claude Code, or another agent uses this skill:
 - `references/frontend-setup.md`: manual frontend bootstrap steps and integration sequence
 - `references/backend-standard.md`: backend architecture and implementation expectations
 - `references/development-rules.md`: shared standards, design rules, and anti-drift constraints
+- `assets/AGENTS.template.md`: root-level AGENTS.md template for new projects
 - `assets/backend-template/`: starter backend files to copy into a new project
