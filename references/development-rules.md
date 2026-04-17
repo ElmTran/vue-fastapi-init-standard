@@ -16,21 +16,27 @@ Read this file before making architectural or implementation changes.
 - Keep diffs small and scoped.
 - Avoid unrelated refactors.
 - Ask before taking a path with meaningful architectural tradeoffs.
+- Prefer extending an existing pattern over introducing a parallel pattern.
 
 ## Frontend Guardrails
 
 - Use Vue 3 + TypeScript + Vite.
 - Use pnpm.
 - Prefer component-first structure.
+- Prefer small files that are easy to scan at a glance.
 - Use composables for reusable logic.
+- Keep views orchestration-focused.
+- Keep stores small and domain-focused.
 - Prefer shadcn-vue primitives over ad hoc markup when appropriate.
 
 ## Backend Guardrails
 
 - Use FastAPI + uv + pydantic-settings.
 - Keep the `app/` package layout.
+- Prefer one responsibility per module.
 - Separate API, schemas, repositories, services, and core concerns.
 - Keep unified error envelopes and `X-Trace-Id` support.
+- Prefer thin routers and explicit domain/service boundaries.
 
 ## Design Guardrails
 
@@ -39,6 +45,8 @@ Read this file before making architectural or implementation changes.
 - Use `#eceae4` or opacity-derived charcoal borders in place of heavy shadows.
 - Preserve the warm, restrained Lovable-inspired style.
 - Keep typography editorial and spacing generous.
+- Prefer depth from borders, tone, and inset treatment instead of dramatic elevation.
+- Use full-pill radius only for pill-style controls, not every rectangular button.
 
 ## Agent Anti-Drift Rules
 
@@ -49,6 +57,7 @@ When an agent is implementing from this starter:
 - Do not let generated examples become product requirements.
 - Do not overfit initialization code to a single future feature.
 - Keep PRD and feature logic separate from architecture files and starter code.
+- Do not allow starter files to grow into large catch-all modules without first extracting structure.
 
 ## Good Progress Updates
 

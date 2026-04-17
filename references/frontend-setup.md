@@ -44,13 +44,24 @@ src/
   styles/
 ```
 
-## Working Rules
+## Development Habits
 
-- Keep views orchestration-focused.
+- Build UI from small, reusable components.
+- Keep one concern per file whenever possible.
+- Split files when logic, template, or styling starts dominating the component.
+- Keep views orchestration-focused rather than logic-heavy.
 - Move reusable stateful logic into composables.
 - Keep stores small and domain-focused.
-- Prefer shadcn-vue and existing UI primitives over ad hoc raw HTML.
+- Prefer shared behavior and shared types over duplication.
+- Match surrounding naming and composition API patterns.
+
+## Tooling Habits
+
+- Use `pnpm` for installs and scripts.
+- Prefer `pnpm run dev`, `pnpm run build`, and related scripts over npm or yarn.
 - Keep aliases consistent with `@ -> ./src` in root `tsconfig.json`.
+- Add shadcn-vue components with the Vue CLI flow, not the React shadcn CLI.
+- Prefer shadcn-vue and existing UI primitives over ad hoc raw HTML when appropriate.
 
 ## Design Direction
 
@@ -69,3 +80,4 @@ Apply these defaults unless the user requests another direction:
 - Do not replace pnpm with npm or yarn.
 - Do not default to white backgrounds or generic template styling.
 - Do not add business-specific routes or screens during initialization unless requested.
+- Do not let a starter view become a large catch-all file.

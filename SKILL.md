@@ -21,6 +21,7 @@ Use this skill to create or normalize a reusable project baseline for a Vue 3 fr
 - A FastAPI backend starter with `app/` package layout
 - Shared engineering rules that keep coding agents from drifting away from the chosen stack
 - Design guidance for warm cream, charcoal, low-shadow UI work
+- Development habits that encourage small files, clear separation, and reusable structure
 
 ## Frontend Rules
 
@@ -31,6 +32,7 @@ For a new frontend app:
 - Prefer `pnpm` for all package and script workflows.
 - Add Tailwind, Iconify, and shadcn-vue in the order documented in `references/frontend-setup.md`.
 - Keep heavy view logic in composables and keep stores focused.
+- Prefer small, component-first files over monolithic route components.
 - Use design tokens and follow the cream-and-charcoal design language from `references/development-rules.md`.
 
 ## Backend Rules
@@ -41,6 +43,7 @@ For backend setup:
 - Keep code under `app/` with clean separation across API, schemas, services, repositories, and core modules.
 - Preserve unified JSON error envelopes and `X-Trace-Id` semantics.
 - Use async for I/O paths and typed public APIs.
+- Prefer small modules with one responsibility each.
 - Never raise bare `Exception` in application code; define domain errors beneath `AppError`.
 
 ## Agent Guardrails

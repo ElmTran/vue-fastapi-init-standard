@@ -45,10 +45,12 @@ pyproject.toml
 ## Architecture Rules
 
 - Keep `app/` as the installable package root.
+- Prefer small files and one responsibility per module.
 - Separate routing, validation, persistence, and domain logic.
 - Keep routers thin and push non-trivial logic into services.
 - Use typed response models. Do not return ORM rows directly over HTTP.
 - Keep route prefixes versioned, such as `/v1`.
+- Extend existing patterns instead of inventing alternate structures.
 
 ## Error and Trace Rules
 
@@ -56,6 +58,7 @@ pyproject.toml
 - Return a unified JSON error envelope with `success: false` and `error: { code, message, request_id, details }`.
 - Preserve `X-Trace-Id` request and response semantics.
 - Sanitize unexpected errors in HTTP responses.
+- Log real failures with the trace id for easier correlation.
 
 ## Implementation Defaults
 
@@ -64,6 +67,15 @@ pyproject.toml
 - Use `pydantic-settings` for configuration.
 - Keep docs endpoints configurable through settings.
 - Provide a simple `/v1/health` endpoint in the starter.
+- Use clear abstractions only when multiple implementations actually need them.
+
+## Performance Habits
+
+- Avoid N+1 query patterns.
+- Batch writes where possible instead of looping one row at a time.
+- Avoid `SELECT *` style data access in hot paths.
+- Use caching and queues for expensive or non-critical work when needed.
+- Measure before optimizing.
 
 ## Development Commands
 
@@ -80,3 +92,4 @@ uv run pytest
 - Do not collapse everything into a single file.
 - Do not add business endpoints during initialization unless requested.
 - Do not remove unified error handling or tracing just to simplify the starter.
+- Do not let services, routers, or config modules become god modules.
