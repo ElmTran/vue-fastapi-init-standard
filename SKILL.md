@@ -1,6 +1,6 @@
 ---
 name: vue-fastapi-init-standard
-description: Bootstrap and standardize a new Vue 3 + Vite frontend and FastAPI backend project with documented frontend setup steps, generated backend starter structure, Lovable-inspired design rules, and strict agent development guardrails. Use when Codex or another coding agent needs to create an initial full-stack workspace, scaffold the backend, document the frontend initialization process, generate a project-level AGENTS.md file, or keep future implementation aligned with the same architecture and coding standards.
+description: Bootstrap and standardize a new Vue 3 + Vite frontend and FastAPI backend project with documented frontend setup steps, generated backend starter structure, a project-level AGENTS.md file with embedded backend and frontend rules, and Lovable-inspired design rules. Use when Codex or another coding agent needs to create an initial full-stack workspace, scaffold the backend, document the frontend initialization process, generate a project-level AGENTS.md file, preserve a full DESIGN.md reference, or keep future implementation aligned with the same architecture and coding standards.
 ---
 
 # Vue FastAPI Init Standard
@@ -13,16 +13,17 @@ Use this skill to create or normalize a reusable project baseline for a Vue 3 fr
 2. Read `references/frontend-setup.md` when the task touches frontend initialization, routing, components, styling, or design setup.
 3. Read `references/backend-standard.md` when the task touches backend scaffolding, API modules, config, errors, tracing, or services.
 4. Create a project-level `AGENTS.md` from `assets/AGENTS.template.md` when starting a new project.
-5. Copy the backend starter from `assets/backend-template/` when the user wants a ready backend skeleton.
-6. Keep changes small and architectural. Do not invent product features unless the user explicitly asks.
+5. Copy `assets/DESIGN.template.md` into the new project as `DESIGN.md`.
+6. Copy the backend starter from `assets/backend-template/` when the user wants a ready backend skeleton.
+7. Keep changes small and architectural. Do not invent product features unless the user explicitly asks.
 
 ## What This Skill Should Produce
 
 - A documented frontend bootstrap path based on `pnpm create vite`
 - A FastAPI backend starter with `app/` package layout
-- A project-level `AGENTS.md` file that anchors future agent behavior
+- A project-level `AGENTS.md` file that embeds backend and frontend development rules
+- A full `DESIGN.md` file kept as a standalone style reference
 - Shared engineering rules that keep coding agents from drifting away from the chosen stack
-- Design guidance for warm cream, charcoal, low-shadow UI work
 - Development habits that encourage small files, clear separation, and reusable structure
 
 ## AGENTS.md Requirement
@@ -30,43 +31,18 @@ Use this skill to create or normalize a reusable project baseline for a Vue 3 fr
 When using this skill for a new project:
 
 - Create `AGENTS.md` at the project root by adapting `assets/AGENTS.template.md`.
+- Keep backend and frontend coding rules inline in `AGENTS.md` instead of creating separate `backend-py.md` and `frontend-vue.md` files.
 - Keep it implementation-facing rather than product-facing.
-- Use it to point future agents to the local frontend, backend, and design rule files.
-- Preserve the rule priority so future work stays aligned.
+- Use it as the primary rule file for future agents.
 - Keep product requirements, features, and PRD content outside `AGENTS.md`.
 
-## Frontend Rules
+## Design File Requirement
 
-For a new frontend app:
+When using this skill for a new project:
 
-- Do not silently switch stacks away from Vue 3 + TypeScript + Vite.
-- Treat frontend initialization as a documented sequence unless the user explicitly asks you to run the commands.
-- Prefer `pnpm` for all package and script workflows.
-- Add Tailwind, Iconify, and shadcn-vue in the order documented in `references/frontend-setup.md`.
-- Keep heavy view logic in composables and keep stores focused.
-- Prefer small, component-first files over monolithic route components.
-- Use design tokens and follow the cream-and-charcoal design language from `references/development-rules.md`.
-
-## Backend Rules
-
-For backend setup:
-
-- Use Python 3.13+, `uv`, FastAPI, and `pydantic-settings`.
-- Keep code under `app/` with clean separation across API, schemas, services, repositories, and core modules.
-- Preserve unified JSON error envelopes and `X-Trace-Id` semantics.
-- Use async for I/O paths and typed public APIs.
-- Prefer small modules with one responsibility each.
-- Never raise bare `Exception` in application code; define domain errors beneath `AppError`.
-
-## Agent Guardrails
-
-When Codex, Claude Code, or another agent uses this skill:
-
-- Start by naming which references are being applied.
-- Keep the project template generic. Product requirements belong in PRD files, not in the starter architecture.
-- Avoid broad refactors, extra stacks, or alternate design systems.
-- Preserve the selected baseline even when adding future features, unless the user explicitly approves a change in direction.
-- If two valid architectural options have non-obvious tradeoffs, pause and ask once before committing.
+- Copy `assets/DESIGN.template.md` into the project root as `DESIGN.md`.
+- Preserve the design file as a standalone reference.
+- Treat it as the visual style guide for later UI work.
 
 ## Resources
 
@@ -74,4 +50,5 @@ When Codex, Claude Code, or another agent uses this skill:
 - `references/backend-standard.md`: backend architecture and implementation expectations
 - `references/development-rules.md`: shared standards, design rules, and anti-drift constraints
 - `assets/AGENTS.template.md`: root-level AGENTS.md template for new projects
+- `assets/DESIGN.template.md`: full standalone design reference for new projects
 - `assets/backend-template/`: starter backend files to copy into a new project
