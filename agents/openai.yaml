@@ -1,0 +1,7 @@
+interface:
+  display_name: "Vue FastAPI Init Standard"
+  short_description: "Vue FastAPI starter with guardrails"
+  default_prompt: "Use $vue-fastapi-init-standard to scaffold a Vue 3 + FastAPI starter with documented frontend setup and a generated backend baseline."
+
+policy:
+  allow_implicit_invocation: true
