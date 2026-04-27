@@ -41,13 +41,12 @@ Read this file before making architectural or implementation changes.
 
 ## Design Guardrails
 
-- Use cream `#f7f4ed` as the default page background.
-- Use charcoal `#1c1c1c` for main text and dark CTA surfaces.
-- Use `#eceae4` or opacity-derived charcoal borders in place of heavy shadows.
-- Preserve the warm, restrained Lovable-inspired style.
-- Keep typography editorial and spacing generous.
-- Prefer depth from borders, tone, and inset treatment instead of dramatic elevation.
-- Use full-pill radius only for pill-style controls, not every rectangular button.
+- Default to a calm, tool-like interface rather than a showcase or landing-page layout.
+- Keep typography modest and readable; prefer smaller headings over oversized hero text.
+- Use a warm neutral background, one muted accent color, and very light borders.
+- Use borders sparingly and rely on spacing before adding more card chrome.
+- Prefer small-to-medium radii and minimal shadows.
+- Keep motion subtle: gentle fade, slight translate, restrained hover feedback.
 
 ## Agent Anti-Drift Rules
 

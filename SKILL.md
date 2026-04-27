@@ -1,6 +1,6 @@
 ---
 name: vue-fastapi-init-standard
-description: Bootstrap and standardize a new Vue 3 + Vite frontend and FastAPI backend project with documented frontend setup steps, generated backend starter structure, a project-level AGENTS.md file with embedded backend and frontend rules, and Lovable-inspired design rules. Use when Codex or another coding agent needs to create an initial full-stack workspace, scaffold the backend, document the frontend initialization process, generate a project-level AGENTS.md file, preserve a full DESIGN.md reference, or keep future implementation aligned with the same architecture and coding standards.
+description: Bootstrap and standardize a new Vue 3 + Vite frontend and FastAPI backend project with documented frontend setup steps, generated backend starter structure, a project-level AGENTS.md file with embedded backend and frontend rules, and a calm minimal tool-style design system. Use when Codex or another coding agent needs to create an initial full-stack workspace, scaffold the backend, document the frontend initialization process, generate a project-level AGENTS.md file, preserve a full DESIGN.md reference, or keep future implementation aligned with the same architecture and coding standards.
 ---
 
 # Vue FastAPI Init Standard

@@ -82,13 +82,13 @@ For layouts, styling, components, theming, visual polish, landing pages, dashboa
 
 Required defaults:
 
-- Use cream `#f7f4ed` as the base page background instead of plain white
-- Use charcoal `#1c1c1c` as the primary text and dark action color
-- Use `#eceae4` or opacity-derived charcoal borders instead of heavy shadows
-- Keep the warm, restrained Lovable-inspired visual language
-- Respect typography rules, spacing scale, border radius scale, and button treatment
-- Use inset-shadow dark primary buttons where the design calls for a main CTA
-- Preserve responsive behavior and avoid generic default styling
+- Default to a calm, tool-like interface rather than a showcase or landing-page style layout
+- Keep typography modest: smaller page titles, compact section headings, and readable body copy over oversized hero text
+- Use few colors, one muted accent, and warm neutral surfaces instead of stark high-contrast bands or multiple emphasis colors
+- Use borders sparingly and keep them light; many sections can rely on spacing rather than full card containment
+- Prefer small-to-medium radii and minimal shadows
+- Treat motion as orientation support only: soft fade and slight translate transitions, no flashy or decorative animation
+- Respect the typography, spacing, color, motion, and restraint rules defined in `DESIGN.md`
 
 ## Task Routing
 

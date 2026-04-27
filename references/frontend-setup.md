@@ -68,17 +68,19 @@ src/
 
 Apply these defaults unless the user requests another direction:
 
-- Base background: `#f7f4ed`
-- Primary text and dark CTA: `#1c1c1c`
-- Passive border: `#eceae4`
-- Interactive border: `rgba(28,28,28,0.4)`
-- Avoid heavy card shadows.
-- Prefer restrained, warm, editorial styling.
+- Base background: warm neutral off-white rather than pure white.
+- Primary text: `#171413`
+- Accent: one muted accent such as `#7a1f32`
+- Keep borders light and use them sparingly.
+- Prefer modest typography and compact section structure over oversized hero layouts.
+- Motion should be subtle and functional only.
+- Avoid heavy shadows, decorative gradients, or multi-accent palettes.
 
 ## What Not To Do
 
 - Do not introduce React, Next.js, Nuxt, or unrelated frontend stacks.
 - Do not replace pnpm with npm or yarn.
 - Do not default to white backgrounds or generic template styling.
+- Do not default to marketing-style hero sections or oversized landing-page typography.
 - Do not add business-specific routes or screens during initialization unless requested.
 - Do not let a starter view become a large catch-all file.
