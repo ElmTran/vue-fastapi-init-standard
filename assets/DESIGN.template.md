@@ -1,201 +1,233 @@
-# Minimal Tool Design System
+# Crisp Workspace Design System
 
-## 1. Visual Theme & Atmosphere
+This project should feel like a polished workspace application: focused, quiet, modern, and slightly editorial. Use a near-white page, translucent panels, compact sticky navigation, restrained Burgundy accents, and clean text hierarchy.
 
-This product should feel like a calm personal tool, not a marketing site or a brand showcase. The interface is quiet, lightweight, and text-first. Visual hierarchy should come from spacing, alignment, typography, and a small number of neutral surfaces rather than oversized headlines, decorative gradients, or heavy chrome.
+The goal is not a landing page and not a plain admin template. The interface should feel like a well-made professional tool that is pleasant to keep open for a long time.
 
-The reference temperament is close to a thoughtfully designed blog or note-taking app:
+## 1. Product Feel
 
-- restrained
+The default mood is:
+
+- crisp
+- spacious
+- lightweight
 - readable
-- practical
-- low-noise
-- slightly warm rather than cold
+- softly premium
+- task-first
 
-The UI should help the user focus on tasks such as creating profiles, running interview sessions, and reviewing feedback. It should never compete with that content.
+The UI should help users scan, create, compare, and review without visual fatigue. Use restraint, but avoid washed-out notebook styling. Surfaces should be clean and bright, with just enough translucency, depth, and typographic care to feel designed.
 
-**Key characteristics**
-- Soft warm page background instead of stark white
-- Small-to-medium typography with strong readability
-- Very light borders, used sparingly
-- One muted accent color only
-- Minimal shadows
-- Generous whitespace
-- Motion that is subtle and functional
+## 2. Color System
 
-## 2. Color Palette & Roles
+Prefer a near-white neutral system with one dark text color and one small-area accent.
 
-### Primary surfaces
-- **Page Background**: `#f5f1ea`
-- **Raised Surface**: `rgba(255, 255, 255, 0.78)`
-- **Strong Surface**: `rgba(255, 255, 255, 0.92)`
+### Core Tokens
 
-### Text
-- **Primary Text**: `#171413`
-- **Secondary Text**: `rgba(23, 20, 19, 0.72)`
-- **Muted Text**: `rgba(23, 20, 19, 0.56)`
+- Page: `#fcfcfb`
+- Page Alt: `#f7f7f5`
+- Surface: `rgba(255, 255, 255, 0.62)`
+- Surface Strong: `rgba(255, 255, 255, 0.82)`
+- Surface Muted: `rgba(255, 255, 255, 0.5)`
+- Text: `#171413`
+- Text Soft: `rgba(23, 20, 19, 0.76)`
+- Text Muted: `rgba(23, 20, 19, 0.56)`
+- Border: `rgba(18, 18, 18, 0.12)`
+- Border Soft: `rgba(18, 18, 18, 0.08)`
+- Border Faint: `rgba(18, 18, 18, 0.05)`
+- Accent: `#7a1f32`
+- Accent Ring: `rgba(122, 31, 50, 0.18)`
+- Focus: `rgba(122, 31, 50, 0.36)`
+- Shadow Soft: `0 10px 30px rgba(29, 21, 19, 0.045)`
 
-### Lines & Structure
-- **Soft Border**: `rgba(18, 18, 18, 0.08)`
-- **Standard Border**: `rgba(18, 18, 18, 0.14)`
-- **Strong Border**: `rgba(18, 18, 18, 0.22)`
+### Usage Rules
 
-### Accent
-- **Accent**: `#7a1f32`
+- Use `#fcfcfb` or a very subtle white-to-page gradient for the app background.
+- Use Burgundy only for active states, focus rings, links, small badges, and tiny data highlights.
+- Do not use the accent as a large hero fill or full-width band.
+- Avoid saturated multi-color palettes. If status colors are needed, keep them muted and secondary to the main system.
+- Avoid stark black, pure gray admin chrome, beige-heavy themes, and purple-blue gradient identities.
 
-Use the accent only for:
-- links
-- focus rings
-- active indicators
-- very small data highlights
+## 3. Typography
 
-Do not use the accent as a large background fill.
+### Fonts
 
-## 3. Typography Rules
+- UI: `Inter, Segoe UI, Helvetica, Arial, sans-serif`
+- Optional editorial display: `Libre Baskerville, Georgia, serif`
+- Code: `SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace`
 
-### Font family
-- **Body / UI**: `Inter, Segoe UI, Helvetica, Arial, sans-serif`
-- **Optional Display / Editorial**: `Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif`
-- **Code**: `SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace`
+Use sans-serif for nearly all UI. Serif is optional for occasional empty states, markdown content, or editorial headings, but never for dense controls.
 
-### Typography hierarchy
+### Scale
 
 | Role | Size | Weight | Line Height | Notes |
-|------|------|--------|-------------|-------|
-| Page Title | 28px-36px | 600 | 1.2 | Use sparingly |
-| Section Title | 18px-22px | 600 | 1.3 | Default section heading |
-| Card Title | 16px-18px | 600 | 1.35 | Most frequent heading size |
-| Body | 14px-16px | 400 | 1.65-1.8 | Default reading size |
-| Meta / Label | 12px-13px | 500 | 1.5 | Uppercase allowed only when useful |
-| Small | 12px | 400 | 1.5 | Secondary details |
+| --- | --- | --- | --- | --- |
+| App/Page Title | 30px-34px | 600 | 1.18 | Use once per view |
+| Section Title | 20px-22px | 600 | 1.3 | Main panel headings |
+| Card Title | 16px-18px | 600 | 1.35 | Repeated content blocks |
+| Body | 14px-16px | 400 | 1.65-1.85 | Default copy |
+| Label/Meta | 12px-13px | 500 | 1.45 | Secondary details |
+| Eyebrow | 11px-12px | 500 | 1.4 | Uppercase, letter spacing about `0.14em` |
 
-### Principles
-- Prefer sans-serif for almost all UI text.
-- Serif is optional and should be rare. If used, keep it limited to a few page titles or editorial moments.
-- Avoid oversized hero typography.
-- Avoid dense negative letter spacing.
-- Let spacing create hierarchy before increasing font size.
+Rules:
 
-## 4. Component Styling
+- Keep page titles compact and confident, not oversized.
+- Use `tracking-tight` lightly for large headings only.
+- Do not scale font size with viewport width.
+- Text in buttons, pills, tabs, and cards must fit at mobile widths.
+
+## 4. Layout
+
+The app should open directly into useful workspace content.
+
+- Use a sticky top header with a translucent page-colored background and light bottom border.
+- Keep navigation compact, text-led, and easy to scan.
+- Prefer a generous max width for workspace pages: about `1440px` to `1760px`.
+- Use page padding around `16px` mobile, `24px-32px` tablet, `40px` desktop.
+- Prefer practical one-column or two-column layouts over decorative hero compositions.
+- Use section dividers and whitespace before adding more cards.
+- Avoid cards inside cards unless there is a real repeated item or modal-like frame.
+
+Recommended page frame:
+
+- Top sticky header: brand/project label, short description, compact nav or actions.
+- Page intro strip: eyebrow, title, one concise description, optional meta/action area.
+- Main content: grid or stacked panels with clear task areas.
+
+## 5. Surfaces And Depth
+
+Use subtle glass-like surfaces sparingly. The effect should feel clean, not flashy.
+
+### Panels
+
+- Standard radius: `12px`
+- Smaller tiles: `10px`
+- Pills: `999px`
+- Border: `1px solid var(--border)` or softer
+- Background: `var(--surface-strong)` or `var(--surface)`
+- Backdrop filter: `blur(12px-16px) saturate(128%-135%)`
+- Shadow: `var(--shadow-soft)` only on primary panels
+
+### When To Use Containers
+
+Use containers for:
+
+- forms
+- data summaries
+- repeated records
+- markdown/evaluation results
+- modal-like task areas
+
+Avoid containers for:
+
+- every page section
+- simple navigation groups
+- text that can be grouped by spacing alone
+
+## 6. Components
+
+Prefer shadcn-vue primitives and local shared components. Keep custom raw HTML styling small and token-based.
 
 ### Buttons
 
-**Primary**
-- Dark text-on-dark fill or dark accent fill
-- Medium height
-- Rounded pill or soft rounded rectangle
-- No glossy or dramatic treatment
-
-**Secondary**
-- Usually text-only or lightly outlined
-- Border should be faint
-- Hover should feel like a small state shift, not a visual transformation
-
-### Cards & Containers
-- Many sections can stay borderless
-- When containment is needed, prefer a very light border
-- Standard card radius: `10px` to `14px`
-- Larger panels can use `16px`
-- Shadows should be minimal or absent
+- Primary: dark text color as fill, white text, rounded pill, medium height.
+- Outline: strong surface background, faint border, accent text or border on hover.
+- Ghost: transparent background, muted text, accent on hover.
+- Use lucide icons in icon buttons when an icon exists.
+- Do not use large colored call-to-action blocks.
 
 ### Inputs
-- Clean, simple rectangles with soft radius
-- Light border by default
-- Stronger border or soft ring on focus
-- No tinted backgrounds unless needed for hierarchy
 
-### Navigation
-- Compact
-- Quiet
-- Text-led
-- Sticky is acceptable if it stays visually light
+- Radius around `10px`.
+- Background `var(--surface-strong)`.
+- Border `var(--border)`.
+- Focus ring with `var(--accent-ring)`.
+- Placeholder uses muted text.
+- Textareas may resize vertically.
 
-## 5. Layout Principles
+### Cards And Tiles
 
-### Overall structure
-- Design like a tool dashboard or writing interface, not a landing page
-- Keep the user near the task immediately
-- Reduce decorative top matter
-- Prefer direct content entry over dramatic hero sections
+- Use a `panel-hover` style for interactive panels: `translateY(-1px)`, slight border/accent shift, and brighter background.
+- Metrics can use smaller translucent tiles with faint borders.
+- Empty states should use dashed or faint borders, not heavy illustration.
 
-### Spacing
-- Base spacing unit: `8px`
-- Typical gaps: `8px`, `12px`, `16px`, `20px`, `24px`, `32px`
-- Use whitespace deliberately to separate groups
+### Markdown / Rich Text
 
-### Containers
-- Keep content width readable
-- Avoid very wide full-bleed compositions unless they improve utility
-- Prefer simple one-column or practical two-column layouts
-
-## 6. Depth & Elevation
-
-Depth should be subtle.
-
-Preferred cues:
-- background contrast
-- whitespace
-- thin borders
-- slight hover background change
-
-Avoid:
-- large shadows
-- thick outlines
-- layered gradients
-- glassmorphism-heavy effects
+- Keep line height generous, around `1.85-1.95`.
+- Use compact serif headings only if the content is editorial or report-like.
+- Code blocks should use soft neutral backgrounds and small radii.
+- Blockquotes may use a thin Burgundy left border.
 
 ## 7. Motion
 
-Motion should support orientation, not spectacle.
+Motion should clarify navigation and state changes.
 
 Recommended:
-- page transition: gentle fade + 4px to 8px vertical movement
-- hover: minor color or background change
-- card hover: at most `translateY(-1px)` or `-2px`
-- reveal animations: only if very subtle and not everywhere
+
+- Route transitions: fade plus `4px-8px` vertical movement, about `180ms-240ms`.
+- Entry animation: fade plus `12px-16px` upward movement, about `280ms-320ms`.
+- Hover: background, border, or `translateY(-1px)`.
 
 Avoid:
-- blur-heavy transitions
-- scale-heavy transitions
+
+- scale-heavy hover effects
 - parallax
-- decorative looping animations
+- looping decorative animation
+- blur-heavy transitions
 
-## 8. Do's and Don'ts
+## 8. shadcn-vue Token Guidance
 
-### Do
-- Keep titles modest in scale
-- Use fewer borders, not more
-- Use one accent color consistently
-- Favor readable text blocks and calm spacing
-- Make the product feel like a dependable utility
-- Preserve mobile readability and compactness
+When using shadcn-vue, map the design system into CSS variables instead of styling every component separately.
 
-### Don't
-- Don't build a marketing-style hero
-- Don't use oversized typography to force emphasis
-- Don't stack many bordered cards inside many bordered cards unless structure really requires it
-- Don't introduce multiple accent colors
-- Don't rely on gradients or dark hero bands as a visual identity shortcut
-- Don't over-animate route or panel transitions
+Preferred light theme direction:
 
-## 9. Agent Prompt Guide
+- `--background`: near white, aligned with `#fcfcfb`
+- `--foreground`: near `#171413`
+- `--card`: translucent or near white
+- `--primary`: near `#171413`
+- `--primary-foreground`: white
+- `--accent`: very light neutral surface
+- `--accent-foreground`: near `#171413`
+- `--ring`: Burgundy-tinted focus
+- `--border`: faint warm neutral
+- `--radius`: around `0.625rem` to `0.75rem`
 
-### Quick style reference
-- "Use a calm, text-first tool UI."
-- "Keep typography modest and readable."
-- "Prefer light borders and soft warm neutrals."
-- "Use one muted accent color only."
-- "Avoid oversized hero sections and decorative gradients."
+Keep component variants close to shadcn-vue defaults, but tune surfaces, borders, radii, and focus rings to match this document.
 
-### Example component prompts
-- "Design a profile list as a quiet utility view with small headings, muted metadata, and only light row separators."
-- "Create a form with 14-16px body text, soft 12px radii, and very light borders."
-- "Build a summary panel that feels like a note-taking interface rather than a product marketing card."
-- "Add a page transition with only a light fade and small upward motion."
+## 9. Do And Do Not
 
-### Iteration guide
-1. Remove visual noise before adding decoration.
-2. Reduce font size before reducing content density.
-3. Use spacing and alignment to solve hierarchy.
-4. Add borders only where grouping is unclear without them.
-5. Keep motion barely noticeable.
+Do:
+
+- Make the first screen useful immediately.
+- Use bright neutral surfaces with subtle translucency.
+- Keep controls compact and polished.
+- Use one accent color consistently.
+- Let spacing, alignment, and small typography shifts create hierarchy.
+- Check mobile layouts for text wrapping and control overflow.
+
+Do not:
+
+- Recreate a beige notebook look.
+- Build marketing heroes for tool screens.
+- Use oversized type as the main design gesture.
+- Add decorative gradient blobs, bokeh, or ornamental backgrounds.
+- Put cards inside cards by default.
+- Use multiple competing accent colors.
+- Make the UI feel like a generic gray admin dashboard.
+
+## 10. Agent Prompt Guide
+
+Quick style reference:
+
+- "Use a crisp near-white workspace UI with translucent panels."
+- "Keep the layout task-first, compact, and polished."
+- "Use Burgundy only as a small-area accent."
+- "Prefer shadcn-vue primitives with tuned design tokens."
+- "Avoid copying old beige guidance."
+
+Iteration guide:
+
+1. Start with a clean layout and useful content hierarchy.
+2. Add surfaces only where grouping needs help.
+3. Tune type and spacing before adding decoration.
+4. Use accent only for interaction and focus.
+5. Verify desktop and mobile for readable density, no overlap, and no clipped text.

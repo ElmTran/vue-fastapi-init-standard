@@ -41,11 +41,11 @@ Read this file before making architectural or implementation changes.
 
 ## Design Guardrails
 
-- Default to a calm, tool-like interface rather than a showcase or landing-page layout.
-- Keep typography modest and readable; prefer smaller headings over oversized hero text.
-- Use a warm neutral background, one muted accent color, and very light borders.
-- Use borders sparingly and rely on spacing before adding more card chrome.
-- Prefer small-to-medium radii and minimal shadows.
+- Default to a crisp, polished workspace interface rather than a showcase or landing-page layout.
+- Keep typography compact, confident, and readable; avoid oversized hero text.
+- Use a near-white page, translucent white surfaces, one restrained Burgundy accent, and very light warm-neutral borders.
+- Prefer shadcn-vue primitives with tuned CSS tokens over ad hoc component styling.
+- Use borders, backdrop blur, and soft shadows sparingly; rely on spacing before adding more card chrome.
 - Keep motion subtle: gentle fade, slight translate, restrained hover feedback.
 
 ## Agent Anti-Drift Rules

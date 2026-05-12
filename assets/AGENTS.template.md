@@ -82,11 +82,12 @@ For layouts, styling, components, theming, visual polish, landing pages, dashboa
 
 Required defaults:
 
-- Default to a calm, tool-like interface rather than a showcase or landing-page style layout
-- Keep typography modest: smaller page titles, compact section headings, and readable body copy over oversized hero text
-- Use few colors, one muted accent, and warm neutral surfaces instead of stark high-contrast bands or multiple emphasis colors
-- Use borders sparingly and keep them light; many sections can rely on spacing rather than full card containment
-- Prefer small-to-medium radii and minimal shadows
+- Default to a crisp, polished workspace interface rather than a showcase or landing-page style layout
+- Keep typography compact and confident: restrained page titles, clear section headings, and readable body copy over oversized hero text
+- Use a near-white page, translucent white surfaces, one restrained Burgundy accent, and very light warm-neutral borders
+- Prefer shadcn-vue primitives with tuned CSS tokens over ad hoc component styling
+- Use borders, backdrop blur, and soft shadows sparingly; many sections can rely on spacing rather than full card containment
+- Prefer small-to-medium radii, especially 10px to 12px for panels and 999px for pills
 - Treat motion as orientation support only: soft fade and slight translate transitions, no flashy or decorative animation
 - Respect the typography, spacing, color, motion, and restraint rules defined in `DESIGN.md`
 
